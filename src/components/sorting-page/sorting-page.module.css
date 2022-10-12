@@ -1,0 +1,47 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons {
+  max-width: 924px;
+  width: 100%;
+  display: flex;
+}
+
+.buttons_radio {
+  max-width: 221px;
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-right: 52px;
+}
+
+.buttons_sorting {
+  max-width: 651px;
+  width: 100%;
+  display: flex;
+  gap: 12px;
+}
+
+.button_sorting {
+  width: 205px;
+  padding: 18px 16px 19px 15px;
+}
+
+.button_arr {
+  margin-left: 68px;
+  width: 205px;
+}
+
+.columns {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  align-items: flex-end;
+  margin: 48px 0 0 0;
+  padding: 0;
+  height: 368px;
+}

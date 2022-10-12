@@ -1,0 +1,42 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  max-width: 567px;
+  width: 100%;
+  display: flex;
+  gap: 0 12px;
+}
+
+.input {
+  max-width: 377px;
+  width: 100%;
+}
+
+.button {
+  max-width: 178px;
+  width: 100%;
+}
+
+.circles {
+  margin: 48px 0 0 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  list-style: none;
+  max-width: 944px;
+  
+}
+
+.invisible {
+  display: none;
+}
+
+.circle_visible {
+  display: flex;
+  margin-bottom: 62px;
+}
