@@ -8,7 +8,7 @@ export class ListNode<T> {
   };
 };
 
-interface IList<T> {
+export interface IList<T> {
   append: (item: T) => void;
   prepend: (item: T) => void;
   addIndex: (item: T, position: number) => void;

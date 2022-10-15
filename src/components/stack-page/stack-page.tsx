@@ -105,7 +105,7 @@ export const StackPage: React.FC = () => {
           />
         </div>
         <ul className={stackPageStyles.circles}>
-          {array.map((circle: string, index: number) => {
+          {array.map((circle, index) => {
             return (
               <li className={stackPageStyles.circle} key={setUniqueId()}>
                 <Circle

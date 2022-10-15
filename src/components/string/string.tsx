@@ -40,14 +40,14 @@ export const StringComponent: React.FC = () => {
             extraClass={stringStyles.button}
             type="submit"
             isLoader={loadingState}
-            disabled={loadingState}
+            disabled={loadingState || !valueInput}
           />
         </form>
         <ul className={stringStyles.circles}>
           {visibilityСircles &&
             valueInput
               .split('')
-              .map((circle: string, index: number) => (
+              .map((circle, index) => (
                 <li key={setUniqueId()}>
                   <Circle
                     state={findIndex(start!, end!, index)}

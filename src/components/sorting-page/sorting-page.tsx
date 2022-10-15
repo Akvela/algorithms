@@ -11,7 +11,7 @@ import { TStep, getBubbleSortAscending, getBubbleSortDescending, getSelectSortAs
 
 export const SortingPage: React.FC = () => {
   const [array, setArray] = React.useState<number[]>();
-  const [radioButton, setRadioButton] = React.useState<Choice>();
+  const [radioButton, setRadioButton] = React.useState<Choice>(Choice.sort);
   const [buttonState, setButtonState] = React.useState<boolean>();
   const [control, setControl] = React.useState<Direction>();
   
@@ -20,6 +20,10 @@ export const SortingPage: React.FC = () => {
     const arrayUnique = randomArr(run);
     setArray(arrayUnique);
   };
+
+  React.useEffect(() => {
+    getRandomArr();
+  }, []);
 
   const showSteps = async (steps: TStep[]) => {
     for (const step of steps) {
@@ -112,7 +116,7 @@ export const SortingPage: React.FC = () => {
               sorting={Direction.Ascending}
               extraClass={sortingStyles.button_sorting}
               isLoader={buttonState && control === Direction.Ascending}
-              disabled={buttonState}
+              disabled={buttonState || !array || !radioButton}
               onClick={() => {
                 startSorting(Direction.Ascending, radioButton!);
                 setButtonState(true);
@@ -125,7 +129,7 @@ export const SortingPage: React.FC = () => {
               sorting={Direction.Descending}
               extraClass={sortingStyles.button_sorting}
               isLoader={buttonState && control === Direction.Descending}
-              disabled={buttonState}
+              disabled={buttonState || !array || !radioButton}
               onClick={() => {
                 startSorting(Direction.Descending, radioButton!);
                 setButtonState(true);

@@ -5,7 +5,7 @@ import { Input } from "../ui/input/input";
 import { Button } from "../ui/button/button";
 import { Circle } from "../ui/circle/circle";
 import { CircleWrapper } from "./circle-wrapper";
-import { ListNode, List } from "./list";
+import { ListNode, List, IList } from "./list";
 import { setUniqueId, setDelay } from "../../utils/utils";
 import { ElementStates } from "../../types/element-states";
 import { randomArr } from "../../utils/utils";
@@ -32,7 +32,7 @@ export const ListPage: React.FC = () => {
 
   const addList = (): List<string> => {
     if (ref.current === null) {
-      ref.current = new List<string>(array);
+      ref.current = new List<string>();
     };
     return ref.current;
   };
@@ -223,7 +223,7 @@ export const ListPage: React.FC = () => {
   };
 
   const changeValue = (
-    item: ListNode<any>,
+    item: ListNode<string>,
     curr: number,
     index: number,
     change: boolean
@@ -323,7 +323,7 @@ export const ListPage: React.FC = () => {
           />
         </div>
         <ul className={listPageStyles.circles}>
-          {array && array.map((circle: ListNode<any>, index: number) => {
+          {array && array.map((circle: ListNode<string>, index: number) => {
             return (
               <CircleWrapper
                 arrowIcon={array.length - 1 === index}

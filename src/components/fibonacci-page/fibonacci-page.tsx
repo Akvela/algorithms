@@ -39,12 +39,12 @@ export const FibonacciPage: React.FC = () => {
             type="submit"
             extraClass={fibonacciStyles.button}
             isLoader={loadingState}
-            disabled={loadingState}
+            disabled={loadingState || valueInput > 19}
             onClick={setNumbersFibonacci}
           />
         </form>
         <ul className={fibonacciStyles.circles}>
-          {numberArray.map((circle: number, index: number) => {
+          {numberArray.map((circle, index) => {
             return (
               <Delayed key={index+100} delay={500*(index+1)}>
                 <li className={fibonacciStyles.circle}>
