@@ -6,7 +6,7 @@ import { Button } from "../ui/button/button";
 import { Direction } from "../../types/direction";
 import { Choice } from "../../types/radio-choice";
 import { Column } from "../ui/column/column";
-import { getRandomInt, randomArr, setUniqueId, setDelay } from "../../utils/utils";
+import { getRandomInt, randomArr, setDelay } from "../../utils/utils";
 import { TStep, getBubbleSortAscending, getBubbleSortDescending, getSelectSortAscending, getSelectSortDescending } from "./utils";
 
 export const SortingPage: React.FC = () => {

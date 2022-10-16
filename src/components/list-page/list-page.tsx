@@ -5,7 +5,7 @@ import { Input } from "../ui/input/input";
 import { Button } from "../ui/button/button";
 import { Circle } from "../ui/circle/circle";
 import { CircleWrapper } from "./circle-wrapper";
-import { ListNode, List, IList } from "./list";
+import { ListNode, List } from "./list";
 import { setUniqueId, setDelay } from "../../utils/utils";
 import { ElementStates } from "../../types/element-states";
 import { randomArr } from "../../utils/utils";
