@@ -23,4 +23,4 @@ npm i
 npm start
 ```
 
-Посмотреть проект можно по [ссылке](https://akvela.github.io/react-burger/)
+Посмотреть проект можно по [ссылке](https://akvela.github.io/algorithms/)
