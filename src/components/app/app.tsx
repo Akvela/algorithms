@@ -12,7 +12,7 @@ import { StackPage } from "../stack-page/stack-page";
 function App() {
   return (
     <div className={appStyles.app}>
-      <BrowserRouter>
+      <BrowserRouter basename='/algorithms'>
         <Switch>
           <Route path="/" exact>
             <MainPage />
