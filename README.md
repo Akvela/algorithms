@@ -4,7 +4,6 @@
 
 * TypeScript
 * React.js
-* WebSockets
 * CSS
 * Webpack
 
