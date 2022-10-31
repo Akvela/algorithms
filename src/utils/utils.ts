@@ -1,3 +1,5 @@
+import { ElementStates } from "../types/element-states";
+
 export function setUniqueId(): number {
   return Date.now() * Math.random()
 };
@@ -6,7 +8,7 @@ export const setDelay = (milliseconds: number) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 };
 
-export const swap = (arr: string[] | number[], firstIndex: number, secondIndex: number): void => {
+export function swap<T>(arr: T[], firstIndex: number, secondIndex: number): void {
   const temp = arr[firstIndex];
   arr[firstIndex] = arr[secondIndex];
   arr[secondIndex] = temp;
@@ -16,7 +18,7 @@ export const getRandomInt = (min: number, max: number): number => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-export const randomArr = (run: number): number[] => {
+export const randomArr = (run: number) => {
   let arrUniqueNumbers: number[] = [];
   while (arrUniqueNumbers.length < run) {
     const randomNumber = Math.floor(Math.random() * 101);
@@ -31,5 +33,6 @@ export const randomArr = (run: number): number[] => {
       arrUniqueNumbers[arrUniqueNumbers.length] = randomNumber;
     }
   }
-  return arrUniqueNumbers;
+  const arr = arrUniqueNumbers.map((item) => ({ value: item, state: ElementStates.Default }))
+  return arr;
 }

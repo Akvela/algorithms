@@ -40,8 +40,8 @@ export const ListPage: React.FC = () => {
   const list = addList();
 
   const getRandomArr = () => {
-    randomArr(3).forEach((item: number) => {
-      list.append(item.toString());
+    randomArr(3).forEach((item) => {
+      list.append(item.value.toString());
     });
     setArray(list.putArray());
   };
@@ -140,7 +140,7 @@ export const ListPage: React.FC = () => {
       i++;
     }
     await setDelay(300);
-    setIndexTail(i - 1);
+    setLastIndexTail(i - 1);
     await setDelay(300);
     setDeletion(false);
     await setDelay(300);

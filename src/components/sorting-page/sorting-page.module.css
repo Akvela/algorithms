@@ -45,15 +45,3 @@
   padding: 0;
   height: 368px;
 }
-
-.column_change > div {
-  background-color: #D252E1;
-}
-
-.column_default > div {
-  background-color: var(--default-color);
-}
-
-.column_end > div {
-  background-color: #7FE051;
-}
