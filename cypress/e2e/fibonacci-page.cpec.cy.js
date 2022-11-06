@@ -1,6 +1,8 @@
+import { selectorCircle } from "../../src/utils/const";
+
 describe('Проверка страницы с алгоритмом Последовательность Фибоначчи', () => {
   it('Input должен быть пустой', () => {
-    cy.visit('http://localhost:3000/algorithms/fibonacci');
+    cy.visit('/fibonacci');
     cy.get('input').should('have.value', '');
   });
 
@@ -13,7 +15,7 @@ describe('Проверка страницы с алгоритмом Послед
     cy.get('button').eq(1).click();
     cy.wait(500 * 20);
 
-    cy.get('div[class*=circle_content]')
+    cy.get(`div${selectorCircle}`)
       .should('have.length', 20)
       .each((el, index) => {
         if (index === 0) cy.wrap(el).contains(0);

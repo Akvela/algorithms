@@ -1,6 +1,8 @@
+import { selectorCircle, selectorChanging, selectoreDefault, selectoreModified } from "../../src/utils/const";
+
 describe('Проверка страницы с алгоритмом Строка', () => {
   it('Input должен быть пустой', () => {
-    cy.visit('http://localhost:3000/algorithms/recursion');
+    cy.visit('/recursion');
     cy.get('input').should('have.value', '');
   });
 
@@ -12,23 +14,23 @@ describe('Проверка страницы с алгоритмом Строка
     cy.get('input').type('12345');
     cy.get('button').eq(1).click();
 
-    cy.get('[class*=circle_content]')
+    cy.get(selectorCircle)
       .should('have.length', 5)
       .each((el, index) => {
         cy.wrap(el).contains(index + 1);
         if (index === 0 || index === 4) {
-          cy.wrap(el).find('div[class*=circle_changing]');
+          cy.wrap(el).find(`div${selectorChanging}`);
         }
         if (index === 1) {
-          cy.wrap(el).find('div[class*=circle_default]');
+          cy.wrap(el).find(`div${selectoreDefault}`);
         }
       });
 
-    cy.get('div[class*=circle_content]')
+    cy.get(selectorCircle)
       .should('have.length', 5)
       .each((el, index) => {
         cy.wrap(el).contains(5 - index);
-        cy.wrap(el).find('div[class*=modified]');
+        cy.wrap(el).find(`div${selectoreModified}`);
       });
   });
 });
