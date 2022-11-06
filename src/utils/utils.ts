@@ -35,4 +35,4 @@ export const randomArr = (run: number) => {
   }
   const arr = arrUniqueNumbers.map((item) => ({ value: item, state: ElementStates.Default }))
   return arr;
-}
+};

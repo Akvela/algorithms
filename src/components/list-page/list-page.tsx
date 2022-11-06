@@ -40,7 +40,7 @@ export const ListPage: React.FC = () => {
   const list = addList();
 
   const getRandomArr = () => {
-    randomArr(3).forEach((item) => {
+    randomArr(4).forEach((item) => {
       list.append(item.value.toString());
     });
     setArray(list.putArray());

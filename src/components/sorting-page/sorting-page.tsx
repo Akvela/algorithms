@@ -24,7 +24,6 @@ export const SortingPage: React.FC = () => {
     setRadioButton(valueSort);
   };
 
-
   const makeSort = async (arr: TArrayElements[], direction: Direction) => {
     const { length } = arr;
     for (let i = 0; i < length; i++) {
