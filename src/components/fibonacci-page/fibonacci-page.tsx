@@ -7,18 +7,18 @@ import { Circle } from "../ui/circle/circle";
 import { Delayed } from "../delayed/delayed";
 
 export const FibonacciPage: React.FC = () => {
-  const [valueInput, setValueInput] = React.useState<number>(1);
+  const [valueInput, setValueInput] = React.useState<number | null>(null);
   const [loadingState, setLoadingState] = React.useState<boolean>(false);
   const [numberArray, setNumberArray] = React.useState<number[]>([]);
 
   const setNumbersFibonacci = () => {
     setLoadingState(true);
     let arrFibonacci: number[] = [0, 1];
-    for (let i = 2; i < valueInput + 1; i++) {
+    for (let i = 2; i < valueInput!! + 1; i++) {
       arrFibonacci.push(arrFibonacci[i - 2] + arrFibonacci[i - 1]);
     }
     setNumberArray(arrFibonacci);
-    setTimeout(function() {setLoadingState(false)}, 500*(valueInput+1));
+    setTimeout(function() {setLoadingState(false)}, 500 * (valueInput || 0 + 1));
   };
 
   return (
@@ -29,9 +29,8 @@ export const FibonacciPage: React.FC = () => {
             extraClass={fibonacciStyles.input} 
             isLimitText 
             max={19}
-            min={1}
             type="number"
-            value={valueInput}
+            value={valueInput || ''}
             onChange={(e) => {setValueInput(Number(e.currentTarget.value))}}
           />
           <Button 
@@ -39,7 +38,7 @@ export const FibonacciPage: React.FC = () => {
             type="submit"
             extraClass={fibonacciStyles.button}
             isLoader={loadingState}
-            disabled={loadingState || valueInput > 19}
+            disabled={loadingState || valueInput!! > 19 || valueInput!! < 1 || !valueInput}
             onClick={setNumbersFibonacci}
           />
         </form>

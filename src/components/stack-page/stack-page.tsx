@@ -81,7 +81,7 @@ export const StackPage: React.FC = () => {
             text="Добавить"
             extraClass={stackPageStyles.button_add}
             isLoader={addition}
-            disabled={process}
+            disabled={process || valueInput === ''}
             onClick={() => {setCurrent(current + 1); addStack()}}
           />
           <Button 
